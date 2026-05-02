@@ -74,10 +74,19 @@
     gap: 50px;
 }
 
+/* 기존 코드에 transition만 한 줄 추가합니다 */
 .sub-nav a {
     text-decoration: none;
     color: #666;
     font-size: 16px;
+    transition: color 0.2s ease; /* ✨ 색상이 0.2초 동안 부드럽게 변하도록 설정 */
+}
+
+/* ✨ 마우스를 올렸을 때의 스타일 추가 */
+.sub-nav a:hover {
+    color: #000; /* 완전히 진한 검은색으로 강조 */
+    /* 만약 프라이머리 컬러로 포인트를 주고 싶다면 아래 색상을 쓰세요 */
+    /* color: #8b80f9; */ 
 }
 
 .user-actions {
