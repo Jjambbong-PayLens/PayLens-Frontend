@@ -1,94 +1,243 @@
-@font-face {
-    font-family: 'Pretendard';
-    src: url(./fonts/PretendardVariable.ttf) format('truetype');   
+/* 기본 초기화 및 전체 래퍼 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
+.header-wrapper {
+    border: 1px solid #ccc; /* 전체 외곽선 */
     font-family: 'Pretendard', sans-serif;
+    background-color: #fff;
 }
 
-.top-bar {
-    width: 100%;
-    height: 70px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #eeeeee; /* 헤더 선긋기 */
-
-    position: sticky; /* 스크롤내려도 헤더는고정 */
-    top: 0;
-    z-index: 100;
-
-    display: flex;                
-    justify-content: space-between;
-    align-items: center;
-
+/* =========================================
+   상단 GNB 영역
+========================================= */
+.gnb-top {
+    display: flex;
+    height: 64px;
+    border-bottom: 1px solid #ccc;
+    padding: 0 8vw; /* 여백 */
 }
 
-.left-nav{
+/* 로고 영역 */
+.gnb-logo {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 50px;
-    height: 100%;
+    padding-right: 30px; 
+    border-right: 1px solid #ccc;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+/* 활성화된 메뉴*/
+.gnb-active-menu {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-right: 1px solid #ccc;
+    position: relative;
+}
+
+.active-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+/* 하단 두꺼운 검은선 포인트 */
+.gnb-active-menu::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 20px;
+    right: 20px;
+    height: 4px;
+    background-color: #000;
+}
+
+/* 나머지 버튼 영역 */
+.gnb-other {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-left: 50px;
 }
 
-.right-nav{
+.sub-nav {
+    display: flex;
+    gap: 50px;
+}
+
+.sub-nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 16px;
+}
+
+.user-actions {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 40px;
-    height: 100%;
-    padding-right: 100px;
-}
-.nav-item{
-    text-decoration: none; /* 밑줄 지우기 */
-    color: #000000;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1;
+    gap: 16px;
 }
 
-.nav-item:hover{
-    color: #877DDE;
+.btn-login {
+    padding: 8px 24px;
+    border: 1px solid #333;
+    border-radius: 30px;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.hero-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 500px; /* 적당한 높이 */
-}
-
-.logo-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 100%;                   
-}
-
-.main-logo-img {
-  height: 120px;
-  width: auto;
-  display: block;
-}
-
-.btn-box{
+/* =========================================
+   하단 브레드크럼 영역
+========================================= */
+.gnb-bottom {
     display: flex;
-    justify-content: center;
-    margin-top: 24px;
+    align-items: center;
+    height: 36px;
+    padding: 0 8vw; /* 여백 */
+    background-color: #fff;
 }
 
-.start-btn{
-    background-color: #000000;
-
-    padding: 16px 80px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 8px;
+.breadcrumb {
+    font-size: 13px;
+    color: #888;
 }
 
-.btn-text{
+.breadcrumb .current {
+    color: #333;
+}
+
+/* =========================================
+   Main 섹션
+========================================= */
+.main {
+    background-color: #050505;
     color: #ffffff;
+    padding: 80px 5vw; /* 여백 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 텍스트 영역 */
+.main-content {
+    text-align: center;
+    margin-bottom: 60px; /* 갤러리와의 간격 */
+}
+
+.main-content .subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.main-content .title {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -1px; /* 좁히기 */
+    margin-bottom: 16px;
+}
+
+.main-content .description {
+    font-size: 16px;
+    color: #a0a0a0;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* 버튼 스타일 */
+.btn-primary {
+    background-color: #8b80f9;
+    color: #ffffff;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #7a6eee;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   이미지 갤러리 영역
+========================================= */
+.main-gallery {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+}
+
+/* 각 열 설정 */
+.gallery-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 이미지 비율 */
+.col-1 { flex: 1.2; }
+.col-2 { flex: 0.8; }
+.col-3 { flex: 1.8; }
+.col-4 { flex: 1.2; }
+
+/* 갤러리 내부 이미지 공통 속성 */
+.gallery-col img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    background-color: #222;
+}
+
+/* 반응형: 모바일 화면 */
+@media screen and (max-width: 768px) {
+    .main-gallery {
+        flex-direction: column;
+    }
+    .gallery-col {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   기능 소개 섹션
+========================================= */
+.feature-section {
+    background-color: #ffffff;
+    color: #111111;
+    padding: 120px 5vw; /* 여백 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    letter-spacing: -1px; /* 좁히기 */
+}
+
+.feature-desc {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 1.6; /* 줄 간격 증가 */
+    word-break: keep-all;
 }
