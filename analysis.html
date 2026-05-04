@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대쉬보드 뼈대</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- 사이드바 구역 -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="https://i.postimg.cc/htrdm6VM/Pay-Lens-logo.png" 
+            alt="PayLens 로고"
+            class="logo-img"
+            fetchpriority="high"
+            >
+        </div>
+        <p class="logo-subtitle">Wage Protection</p>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="analysis.html" class="active">Wage Analysis</a>
+            <a href="documents.html">Documents</a>
+            <a href="finder.html">Expert Finder</a>
+            <a href="mypage.html">My Page</a>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <div class="analysis-header">
+            <h2>AI 사전 분석 질문</h2>
+            <p>정확한 임금 체불 검토를 위해 아래 4가지 항목에 답해주세요. 답변에 따라 적용되는 법적 기준이 달라집니다.</p>
+        </div>
+
+            <!-- 질문 카드 1 -->
+        <div class="question-card">
+            <div class="card-top">
+                <span class="q-number">1</span>
+                <h4 class="q-text">상시 근로자 수 5인 이상입니까?</h4>
+            </div>
+            <p class="legal-info">
+                <span class="info-icon">ℹ️</span> 
+                법적 기준: "예" 선택 시 연장·야간·휴일근로 가산수당(1.5배) 로직이 활성화됩니다.
+            </p>
+            <div class="selection-group">
+                <button class="select-btn active">네 (5인 이상)</button>
+                <button class="select-btn">아니오 (5인 미만)</button>
+            </div>
+        </div>
+        
+            <!-- 질문 카드 2 -->
+        <div class="question-card">
+            <div class="card-top">
+                <span class="q-number">2</span>
+                <h4 class="q-text">1주 소정근로시간이 15시간 이상입니까?</h4>
+            </div>
+            <p class="legal-info">
+                <span class="info-icon">ℹ️</span> 
+                법적 기준:  "예" 선택 시 주휴수당 발생 조건이 충족되어 계산에 포함됩니다.
+            </p>
+            <div class="selection-group">
+                <button class="select-btn active">네 (15시간 이상)</button>
+                <button class="select-btn">아니오 (15시간 미만)</button>
+            </div>
+        </div>
+
+            <!-- 질문 카드 3 -->
+        <div class="question-card">
+            <div class="card-top">
+                <span class="q-number">3</span>
+                <h4 class="q-text">계속근로기간이 1년 이상입니까?</h4>
+            </div>
+            <p class="legal-info">
+                <span class="info-icon">ℹ️</span> 
+                법적 기준: "예" 선택 시 퇴직금 계산 로직이 활성화됩니다.
+            </p>
+            <div class="selection-group">
+                <button class="select-btn active">네 (1년 이상)</button>
+                <button class="select-btn">아니오 (1년 미만)</button>
+            </div>
+        </div>
+
+            <!-- 질문 카드 4 -->
+        <div class="question-card">
+            <div class="card-top">
+                <span class="q-number">4</span>
+                <h4 class="q-text">회사 사정으로 예상치 못하게 쉬었던 날이 있습니까?</h4>
+            </div>
+            <p class="legal-info">
+                <span class="info-icon">ℹ️</span> 
+                법적 기준: "예" 선택 시 휴업수당(평균임금의 70%) 청구 가능성이 검토됩니다.
+            </p>
+            <div class="selection-group">
+                <button class="select-btn active">네 (휴업 경험 있음)</button>
+                <button class="select-btn">아니오 (없음)</button>
+            </div>
+        </div>
+
+        <!-- 아래에 '분석 시작하기' 버튼 추가 -->
+        <div class="action-footer">
+            <button class="start-analysis-btn" onclick="location.href='loading.html'">분석 시작하기</button>
+        </div>
+    </main>
+</body>
+</html>

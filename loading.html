@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대쉬보드 뼈대</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- 사이드바 구역 -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="https://i.postimg.cc/htrdm6VM/Pay-Lens-logo.png" 
+            alt="PayLens 로고"
+            class="logo-img"
+            fetchpriority="high"
+            >
+        </div>
+        <p class="logo-subtitle">Wage Protection</p>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="analysis.html" class="active">Wage Analysis</a>
+            <a href="documents.html">Documents</a>
+            <a href="finder.html">Expert Finder</a>
+            <a href="mypage.html">My Page</a>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <div class="loading-container">
+            <h2>분석 진행 중</h2>
+            <p class="loading-sub">안심할 수 있도록 데이터를 분석 중입니다. 잠시만 기다려 주십시오.</p>
+
+            <div class="loading-card">
+                <!-- 왼쪽: 스캔 애니메이션 구역 -->
+                <div class="scan-section">
+                    <div class="doc-mockup">
+                        <!-- 🌟 움직이는 파란색 스캔 라인 -->
+                        <div class="scan-line"></div>
+                        <div class="doc-lines"></div>
+                    </div>
+                </div>
+
+                <!-- 오른쪽: 상태 리스트 -->
+                <div class="status-section">
+                    <div class="status-item done">
+                        <span class="status-icon">✓</span>
+                        <div class="status-text">
+                            <strong>업로드 완료</strong>
+                            <p>급여 명세서 및 계약서 구조화</p>
+                        </div>
+                    </div>
+                    
+                    <div class="status-item loading">
+                        <!-- 🌟 빙글빙글 도는 스피너 -->
+                        <span class="status-icon spin">↻</span>
+                        <div class="status-text">
+                            <strong>법정 임금률 계산 중</strong>
+                            <p>최신 노동법 및 초과 근무 규정 적용</p>
+                        </div>
+                    </div>
+
+                    <div class="status-item pending">
+                        <span class="status-icon gray">○</span>
+                        <div class="status-text">
+                            <strong>불일치 항목 식별 대기</strong>
+                            <p>지급액과 법정 기준 비교 분석</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button>다음 페이지</button>
+    </main>
+</body>
+</html>
