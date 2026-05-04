@@ -72,7 +72,7 @@ body {
     color: #4F46E5;
 }
 
-.sidebar-nav a[href="dashboard.html"] {
+.sidebar-nav a.active {
     background-color: #EEF2FF; 
     color: #4F46E5;            
     font-weight: 600;
@@ -80,7 +80,7 @@ body {
     border-radius: 8px 0 0 8px;
 }
 
-.sidebar-nav a[href="dashboard.html"]::after {
+.sidebar-nav a.active::after {
     content: "";
     position: absolute;
     right: -12px;
@@ -181,4 +181,172 @@ body {
 
 .upload-btn:hover {
     background-color: #312E81;
+}
+/* 질문 카드 전체 박스 */
+.question-card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+/* 숫자 아이콘 */
+.q-number {
+    background: #211B5F;
+    color: white;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+/* 법적 기준 텍스트 */
+.legal-info {
+    font-size: 13px;
+    color: #64748B;
+    background: #F8FAFC;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin: 16px 0;
+}
+
+/* 선택 버튼 그룹 */
+.selection-group {
+    display: flex;
+    gap: 12px;
+}
+
+.select-btn {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #E5E7EB;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+/* 선택되었을 때 (Active) */
+.select-btn.active {
+    background: #211B5F;
+    color: white;
+    border-color: #211B5F;
+}
+/* 분석 시작하기 버튼을 감싸는 구역 */
+.action-footer {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end; /* 🌟 버튼을 오른쪽 끝으로 보냅니다 */
+}
+
+.start-analysis-btn {
+    background-color: #211B5F; /* 진한 남색 */
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.start-analysis-btn:hover {
+    background-color: #312E81;
+}
+/* 1. 위아래로 움직이는 스캔 라인 애니메이션 */
+@keyframes scanning {
+    0% { top: 0%; }
+    100% { top: 100%; }
+}
+
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, #4F46E5, transparent);
+    box-shadow: 0 0 15px #4F46E5;
+    z-index: 10;
+    /* 🌟 여기서 애니메이션을 실행합니다: 2초 동안 계속 위아래로! */
+    animation: scanning 2s linear infinite alternate;
+}
+
+/* 1. 회전 애니메이션 정의 */
+@keyframes smooth-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 2. 아이콘 스타일 */
+.status-icon.spin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 20px; /* 화살표 크기 */
+    color: #4F46E5;  /* 브랜드 컬러 (보라색) */
+    
+    /* 🌟 요란하지 않게 만드는 포인트: 
+       속도를 2초로 늦추고(2s), 
+       linear 대신 'ease-in-out'을 쓰면 회전이 더 부드럽습니다. */
+    animation: smooth-rotate 2s ease-in-out infinite;
+    
+    /* 원 모양 배경 (선택사항) */
+    width: 36px;
+    height: 36px;
+    background-color: #EEF2FF;
+    border-radius: 50%;
+}
+
+/* --- 기본 레이아웃 디자인 --- */
+.loading-card {
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.doc-mockup {
+    width: 200px;
+    height: 260px;
+    background: #F1F5F9;
+    border-radius: 8px;
+    position: relative; /* 스캔 라인의 기준점 */
+    overflow: hidden;   /* 라인이 박스 밖으로 안 나가게 */
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    opacity: 0.5; /* 기본은 흐리게 */
+}
+
+.status-item.done, .status-item.loading {
+    opacity: 1; /* 완료나 로딩 중인 것만 진하게 */
+}
+
+.status-icon {
+    width: 32px;
+    height: 32px;
+    background: #F1F5F9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-item.done .status-icon {
+    background: #EEF2FF;
+    color: #4F46E5;
 }
