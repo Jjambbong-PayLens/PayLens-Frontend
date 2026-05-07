@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결과 화면</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- 사이드바 구역 -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="https://i.postimg.cc/htrdm6VM/Pay-Lens-logo.png" 
+            alt="PayLens 로고"
+            class="logo-img"
+            fetchpriority="high"
+            >
+        </div>
+        <p class="logo-subtitle">Wage Protection</p>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="analysis.html" class="active">Wage Analysis</a>
+            <a href="#">Documents</a>
+            <a href="#">Expert Finder</a>
+            <a href="#">My Page</a>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <div class="result-header">
+            <div class="header-text">
+                <h2>분석 결과 상세</h2>
+                <p>2023년 1월 - 6월 근로 기록 분석</p>
+            </div>
+            <span class="badge-alert">⚠️ 심각한 불일치 발견</span>
+        </div>
+
+        <div class="summary-grid">
+            <div class="res-card unpaid-card">
+                <p class="card-label">총 미지급 예상액</p>
+                <h3 class="amount-main">₩-</h3>
+                <p class="card-subtext">예상 급여 대비 실제 지급액 부족분입니다.</p>
+                <button class="btn-dispute">❗ 이의 제기 시작</button>
+            </div>
+
+            <div class="res-card chart-card">
+                <h4>급여 비교 요약</h4>
+                <div class="progress-section">
+                    <div class="prog-info">
+                        <span>예상 급여 (근로기준법 적용)</span>
+                        <strong>₩-</strong>
+                    </div>
+                    <div class="prog-bar-bg"><div class="prog-bar blue" style="width: 100%;"></div></div>
+                </div>
+                <div class="progress-section">
+                    <div class="prog-info">
+                        <span>실제 지급액 (임금 내역)</span>
+                        <strong>₩-</strong>
+                    </div>
+                    <div class="prog-bar-bg"><div class="prog-bar gray" style="width: 93%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="res-card detail-section">
+            <div class="section-header">
+                <h4>항목별 상세 내역</h4>
+                <a href="#" class="btn-download-sm">📥 명세서 받기</a>
+            </div>
+            
+            <div class="table-list">
+                <div class="table-row">
+                    <div class="row-info">
+                        <span class="row-icon icon-blue">💰</span>
+                        <div><strong>기본급</strong><p>월 -시간 기준</p></div>
+                    </div>
+                    <div class="row-values">
+                        <div class="val-box"><small>예상</small><span>₩-</span></div>
+                        <div class="val-box"><small>지급</small><span>₩-</span></div>
+                        <div class="val-box"><small>차액</small><span class="diff-zero">₩-</span></div>
+                    </div>
+                </div>
+                <div class="table-row alert-row">
+                    <div class="row-info">
+                        <span class="row-icon icon-red">⏰</span>
+                        <div><strong>연장근로수당</strong><p>1.5배 가산 적용 누락 의심</p></div>
+                    </div>
+                    <div class="row-values">
+                        <div class="val-box"><small>예상</small><span>₩-</span></div>
+                        <div class="val-box"><small>지급</small><span>₩-</span></div>
+                        <div class="val-box"><small>차액</small><span class="diff-minus">-₩-</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-grid">
+            <div class="res-card legal-info">
+                <h5>⚖️ 관련 법적 근거</h5>
+                <div class="legal-box">
+                    <strong>근로기준법 제56조 (연장·야간 및 휴일 근로)</strong>
+                    <p>사용자는 연장근로에 대하여는 통상임금의 100분의 50 이상을 가산하여 지급하여야 한다.</p>
+                </div>
+            </div>
+            <div class="cta-card">
+                <h5>다음 단계가 필요하신가요?</h5>
+                <p>전문 노무사와 상담하거나 리포트를 다운로드하세요.</p>
+                <div class="cta-btns">
+                    <button class="btn-white">📄 PDF 리포트 다운로드</button>
+                    <button class="btn-indigo">🎓 전문가 상담 연결</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

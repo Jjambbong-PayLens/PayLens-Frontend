@@ -350,3 +350,91 @@ body {
     background: #EEF2FF;
     color: #4F46E5;
 }
+/* 결과 페이지 전용 헤더 */
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.badge-alert {
+    background-color: #FEE2E2;
+    color: #EF4444;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* 그리드 레이아웃 */
+.summary-grid, .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* 왼쪽은 좁게, 오른쪽은 넓게 */
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.footer-grid { grid-template-columns: 1fr 1fr; } /* 하단은 1:1 */
+
+.res-card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+/* 미지급액 강조 */
+.amount-main {
+    font-size: 32px;
+    color: #DC2626;
+    margin: 12px 0;
+}
+
+.btn-dispute {
+    width: 100%;
+    background: #B91C1C;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* 상세 내역 테이블 리스트 */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.table-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.table-row.alert-row {
+    background-color: #FFF7ED; /* 경고 줄 연한 주황 배경 */
+    margin: 0 -24px;
+    padding: 16px 24px;
+}
+
+.row-info { display: flex; gap: 16px; align-items: center; }
+.row-values { display: flex; gap: 40px; text-align: right; }
+.val-box { display: flex; flex-direction: column; min-width: 80px; }
+.diff-minus { color: #DC2626; font-weight: 600; }
+
+/* 하단 CTA 카드 (남색 배경) */
+.cta-card {
+    background-color: #1E1B4B;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.cta-btns { display: flex; gap: 12px; margin-top: 20px; }
+.btn-white { flex: 1; background: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; }
+.btn-indigo { flex: 1; background: #312E81; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; }
