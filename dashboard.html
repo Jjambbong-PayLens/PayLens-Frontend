@@ -10,11 +10,13 @@
     <!-- 사이드바 구역 -->
     <aside class="sidebar">
         <div class="sidebar-logo">
-            <img src="https://i.postimg.cc/htrdm6VM/Pay-Lens-logo.png" 
-            alt="PayLens 로고"
-            class="logo-img"
-            fetchpriority="high"
-            >
+            <a href="index.html">
+                <img src="https://i.postimg.cc/htrdm6VM/Pay-Lens-logo.png" 
+                alt="PayLens 로고"
+                class="logo-img"
+                fetchpriority="high"
+                >
+            </a>
         </div>
         <p class="logo-subtitle">Wage Protection</p>
         <nav class="sidebar-nav">
@@ -31,7 +33,13 @@
             <p>급여 명세서를 업로드하고 임금 보호 상태를 확인하세요.</p>
         </div>
 
-        <!-- 파일 업로드 구역 -->
+        <div class="user-actions">
+            <svg class="icon-user" viewBox="0 0 24 24" fill="black" width="24" height="24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+            <button class="btn-login">로그인</button>
+        </div>
+
         <div class="upload-card">
             <h3 class="card-title">새 문서 분석</h3>
             

@@ -97,11 +97,14 @@ body {
     flex: 1;
     background-color: #F8FAFC;
     overflow-y: auto;
-    padding: 48px;
+    /* 🌟 상단 패딩을 크게 늘려서 전체 내용물을 아래로 쑥 내립니다 */
+    /* 위쪽 패딩을 120px로 늘림 (위 120px, 우 48px, 아래 48px, 좌 48px) */
+    padding: 120px 48px 48px 48px; 
 }
 /* ==========================================
    메인 콘텐츠 내부 디자인
    ========================================== */
+
 .dashboard-header {
     margin-bottom: 32px;
 }
@@ -118,11 +121,44 @@ body {
     color: #64748B;
 }
 
+.analysis-header {
+    margin-bottom: 48px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    
+    position: fixed; /* 위치 고정 */
+    top: 0;
+    right: 0;
+    left: 260px; 
+    
+    height: 72px;
+    background-color: #ffffff; 
+    border-bottom: 1px solid #E5E7EB;
+    padding: 0 48px;
+    
+    z-index: 100;    
+}
+
+.btn-login {
+    padding: 8px 24px;
+    border: 1px solid #333;
+    border-radius: 30px;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 /* 흰색 배경의 업로드 카드 */
 .upload-card {
     background-color: #ffffff;
     border: 1px solid #E5E7EB;
-    border-radius: 12px; /* 모서리 둥글게 */
+    border-radius: 12px;
     padding: 32px;
 }
 
