@@ -36,19 +36,21 @@ function checkForAuthCode() {
         console.log("발급된 인가 코드:", code);
         
         // 백엔드 전송
-        sendCodeToBackend(code);
+        sendCodeToBackend('user1', code, '사용자1');
     }
 }
 
-async function sendCodeToBackend(code) {
+async function sendCodeToBackend(id, code, description) {
     try {
         const response = await fetch('https://본인의_백엔드_API_주소/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ 
-                authCode: code 
+            body: JSON.stringify({
+                id: id,
+                description: description,
+                authCode: code
             }),
         });
 
