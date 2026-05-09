@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대쉬보드 뼈대</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- 사이드바 구역 -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <a href="index.html">
+                <img src="https://i.postimg.cc/htrdm6VM/Pay-Lens-logo.png" 
+                alt="PayLens 로고"
+                class="logo-img"
+                fetchpriority="high"
+                >
+            </a>
+        </div>
+        <p class="logo-subtitle">Wage Protection</p>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="analysis.html">Wage Analysis</a>
+            <a href="#">Documents</a>
+            <a href="#">Expert Finder</a>
+            <a href="mypage.html" class="active">My Page</a>
+        </nav>
+    </aside>
+<main class="main-content">
+    <div class="mypage-header">
+        <h2>마이페이지</h2>
+        <p>계정 설정, 결제 내역 및 문서를 관리하세요.</p>
+    </div>
+
+    <div class="mp-card profile-section">
+        <div class="mp-card-header">
+            <h3>프로필 개요</h3>
+            <button class="btn-edit">✎ 수정</button>
+        </div>
+        <div class="profile-body">
+            <div class="profile-left">
+                <div class="avatar-placeholder">👤</div>
+                <span class="badge-verified">인증된 사용자</span>
+            </div>
+            <div class="profile-right">
+                <div class="input-grid">
+                    <div class="input-item">
+                        <label>이름</label>
+                        <input type="text" value="-" readonly>
+                    </div>
+                    <div class="input-item">
+                        <label>이메일</label>
+                        <input type="email" value="-" readonly>
+                    </div>
+                    <div class="input-item">
+                        <label>전화번호</label>
+                        <input type="text" value="-" readonly>
+                    </div>
+                    <div class="input-item">
+                        <label for="language-select">언어 설정</label>
+                        <select id="language-select" class="styled-select">
+                            <option value="ko" selected>한국어 (Korean)</option>
+                            <option value="en">영어 (English)</option>
+                            <option value="vi">베트남어 (Vietnamese)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mp-card payment-section">
+        <h3>결제 내역 및 영수증</h3>
+        <table class="payment-table">
+            <thead>
+                <tr>
+                    <th>날짜</th>
+                    <th>내역</th>
+                    <th>금액</th>
+                    <th>상태</th>
+                    <th>동작</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mp-card document-section">
+        <div class="mp-card-header">
+            <h3>문서 보관함</h3>
+            <button class="btn-more">더보기</button>
+        </div>
+        <div class="doc-list">
+        </div>
+    </div>
+</main>
+</body>
+</html>
