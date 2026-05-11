@@ -475,168 +475,247 @@ body {
 .btn-white { flex: 1; background: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; }
 .btn-indigo { flex: 1; background: #312E81; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; }
 
-/* 마이페이지 헤더 */
-.mypage-header {
-    margin-bottom: 32px;
+/* 결제 */
+
+.payment-wrapper {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 24px;
+    padding: 0 40px 40px 40px;
+    align-items: start;
+    max-width: 1100px;
 }
 
-.mypage-header h2 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 8px;
-}
-
-.mypage-header p {
-    color: #64748b;
-    font-size: 14px;
-}
-
-/* 공통 카드 스타일 */
-.mp-card {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 24px;
-}
-
-.mp-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.mp-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1e293b;
-}
-
-/* 프로필 영역 레이아웃 */
-.profile-body {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.profile-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-.avatar-placeholder {
-    width: 100px;
-    height: 120px;
-    background: #eef2ff;
+.plan-card {
+    background-color: #ffffff;
+    border: 1px solid #E2E8F0;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-.badge-verified {
-    font-size: 11px;
-    background: #f1f5f9;
-    color: #94a3b8;
-    padding: 4px 8px;
+.badge-recommend {
+    position: absolute;
+    top: 12px;
+    right: 24px;
+    background-color: #1E1B4B; /* 진한 남색 */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
     border-radius: 4px;
 }
 
-/* 입력 필드 그리드 */
-.input-grid {
+.plan-title {
+    font-size: 16px;
+    color: #334155;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.plan-price {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.plan-price strong {
+    font-size: 32px;
+    color: #1E1B4B;
+    font-weight: 800;
+}
+
+.plan-price span {
+    font-size: 14px;
+    color: #94A3B8;
+}
+
+.plan-features {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.plan-features li {
+    font-size: 13px;
+    color: #475569;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.check-icon {
+    background-color: #1E1B4B;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    margin-right: 12px;
+}
+
+.security-notice {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.shield-icon {
+    font-size: 16px;
+}
+
+.security-notice p {
+    font-size: 11px;
+    color: #64748B;
+    line-height: 1.4;
+}
+
+.payment-card {
+    background-color: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.payment-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 24px;
+}
+
+/* 결제 수단 버튼들 */
+.payment-methods {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #F1F5F9;
 }
 
-.input-item label {
-    display: block;
+.method-btn {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 16px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #64748B;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.method-btn .method-icon {
+    font-size: 20px;
+}
+
+.method-btn:hover {
+    background: #F8FAFC;
+}
+
+.method-btn.active {
+    border: 2px solid #1E1B4B;
+    color: #1E1B4B;
+    font-weight: 600;
+    background: #FAFAFF;
+}
+
+/* 폼 입력 영역 */
+.payment-form {
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
     font-size: 12px;
-    color: #64748b;
-    margin-bottom: 6px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
 }
 
-.input-item input, .input-item select {
-    width: 260px;
-    padding: 10px 14px;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
+.form-group input {
+    padding: 12px 16px;
+    border: 1px solid #CBD5E1;
     border-radius: 6px;
     font-size: 14px;
     color: #334155;
+    outline: none;
 }
 
-/* 결제 내역 테이블 */
-.payment-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+.form-group input::placeholder {
+    color: #94A3B8;
 }
 
-.payment-table th {
-    background: #f1f5f9;
-    text-align: left;
-    padding: 12px;
-    font-size: 13px;
-    color: #64748b;
+.form-group input:focus {
+    border-color: #1E1B4B;
 }
 
-.payment-table td {
-    padding: 16px 12px;
-    border-bottom: 1px solid #f1f5f9;
-    font-size: 14px;
-}
-
-.badge-status {
-    background: #eef2ff;
-    color: #4f46e5;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-/* 문서 보관함 리스트 */
-.doc-list {
+.form-row {
     display: flex;
     gap: 16px;
 }
 
-.doc-item {
+.half-width {
+    flex: 1;
+}
+
+/* 하단 결제 금액 및 버튼 */
+.payment-summary {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    padding: 16px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    min-width: 220px;
+    margin-bottom: 24px;
 }
 
-.doc-icon {
-    background: #fee2e2;
-    color: #ef4444;
-    padding: 8px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 10px;
+.payment-summary span {
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
 }
 
-.doc-info strong { display: block; font-size: 13px; margin-bottom: 2px; }
-.doc-info p { font-size: 11px; color: #94a3b8; }
+.total-price {
+    font-size: 24px;
+    color: #1E1B4B;
+    font-weight: 800;
+}
 
-/* 버튼 스타일들 */
-.btn-edit, .btn-more {
-    background: #f1f5f9;
+.btn-submit {
+    width: 100%;
+    background-color: #1E1B4B;
+    color: #ffffff;
     border: none;
-    padding: 6px 12px;
+    padding: 16px;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 12px;
 }
 
-.btn-more { background: #1e1b4b; color: white; }
+.btn-submit:hover {
+    background-color: #312E81;
+}
+
+.encryption-notice {
+    text-align: center;
+    font-size: 11px;
+    color: #94A3B8;
+}
